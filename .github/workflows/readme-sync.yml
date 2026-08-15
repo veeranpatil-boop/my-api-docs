@@ -15,4 +15,4 @@ jobs:
       - name: Sync OpenAPI spec to ReadMe
         uses: readmeio/rdme@v10
         with:
-          rdme: openapi ./openapi.yaml --key=${{ secrets.README_API_KEY }}
+          rdme: openapi upload ./openapi.yaml --key=${{ secrets.README_API_KEY }}
