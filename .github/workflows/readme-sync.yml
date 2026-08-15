@@ -1,0 +1,18 @@
+name: Sync API docs to ReadMe
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Sync OpenAPI spec to ReadMe
+        uses: readmeio/rdme@v8
+        with:
+          rdme: openapi ./openapi.yaml --key=${{ secrets.README_API_KEY }}
