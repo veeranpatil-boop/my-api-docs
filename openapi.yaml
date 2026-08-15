@@ -35,3 +35,18 @@ paths:
           description: Task details
         '404':
           description: Task not found
+    delete:
+      summary: Delete a task
+      description: Removes a specific task from the list
+      parameters:
+        - name: taskId
+          in: path
+          required: true
+          description: The ID of the task to delete
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Task deleted successfully
+        '404':
+          description: Task not found
