@@ -12,7 +12,10 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v4
 
-      - name: Sync OpenAPI spec to ReadMe
-        uses: readmeio/rdme@v10
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          rdme: openapi upload ./openapi.yaml --key=${{ secrets.README_API_KEY }}
+          node-version: '20'
+
+      - name: Sync OpenAPI spec to ReadMe
+        run: npx rdme@10 openapi upload ./openapi.yaml --key=${{ secrets.README_API_KEY }}
