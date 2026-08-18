@@ -13,6 +13,12 @@ paths:
       responses:
         '200':
           description: A list of tasks
+    get:
+      summary: List all open tasks
+      description: Returns a list of all open tasks
+      responses:
+        '200':
+          description: A list of open tasks
     post:
       summary: Create a new task
       description: Adds a new task to the list
